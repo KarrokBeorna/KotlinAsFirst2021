@@ -32,14 +32,12 @@ class Polynom(vararg coeffs: Double) {
      */
 
     init {
-        val list = coeffs.toMutableList()
-        while (list[0] == 0.0) {
+        val list = coeffs.toList()
+        this.coeffArray =
             if (list.size != 1)
-                list.removeFirstOrNull()
+                list.dropWhile { el -> el == 0.0 }.reversed()
             else
-                break
-        }
-        this.coeffArray = list.reversed()
+                list.reversed()
     }
 
     /**
@@ -75,7 +73,7 @@ class Polynom(vararg coeffs: Double) {
      * Умножить весь массив на число
      */
 
-    private fun mulitpyCoeffs(list: List<Double>, i: Double = 1.0): List<Double> = list.map { c -> c * i}
+    private fun mulitpyCoeffs(list: List<Double>, i: Double = 1.0): List<Double> = list.map { c -> c * i }
 
     /**
      * Поэлементное вычитание
@@ -207,7 +205,7 @@ class Polynom(vararg coeffs: Double) {
         return Polynom(*newCoeffs)
     }
 
-//    private fun division(other: Polynom, returnRem: Boolean? = false): Polynom {
+    //    private fun division(other: Polynom, returnRem: Boolean? = false): Polynom {
 //        var thisDegree = this.degree()
 //        val otherDegree = other.degree()
 //
