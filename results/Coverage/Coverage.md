@@ -26,7 +26,7 @@
 
 Собственно, опять не 53%, а 100%.
 
-6. Оценка покрытия lesson6/task1 - markdownToHtmlLists()
+6. Оценка покрытия lesson7/task1 - markdownToHtmlLists()
 
 ![image](https://user-images.githubusercontent.com/43076360/159092491-16717bdd-d8bd-47b8-8e99-111300018da8.png)
 
